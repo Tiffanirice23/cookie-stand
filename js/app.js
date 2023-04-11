@@ -17,7 +17,7 @@ let seattleStoreObj = {
   calculateCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
-      let cookiesSoldPerHour = Math.round(randomNumberOfCustomers);
+      let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.avg);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
       this.dailyTotal += cookiesSoldPerHour;
     }
@@ -58,7 +58,7 @@ let tokyoStoreObj = {
   calculateCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
-      let cookiesSoldPerHour = Math.round(randomNumberOfCustomers);
+      let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.avg);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
       this.dailyTotal += cookiesSoldPerHour;
     }
@@ -98,7 +98,7 @@ let dubaiStoreObj = {
   calculateCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
-      let cookiesSoldPerHour = Math.round(randomNumberOfCustomers);
+      let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.avg);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
       this.dailyTotal += cookiesSoldPerHour;
     }
@@ -138,7 +138,7 @@ let parisStoreObj = {
   calculateCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
-      let cookiesSoldPerHour = Math.round(randomNumberOfCustomers);
+      let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.avg);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
       this.dailyTotal += cookiesSoldPerHour;
     }
@@ -178,7 +178,7 @@ let limaStoreObj = {
   calculateCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
-      let cookiesSoldPerHour = Math.round(randomNumberOfCustomers);
+      let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.avg);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
       this.dailyTotal += cookiesSoldPerHour;
     }
