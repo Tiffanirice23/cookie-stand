@@ -1,19 +1,29 @@
 table, td, th {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 table {
   margin: 1rem;
+  /* border: 1px solid black; */
+  
 }
 
 td, th {
   padding: 1rem;
+  border: 1px solid black;
+
 }
 
 thead, th {
   font-weight: bold;
+  border: 1px solid black;
 }
 
 tfoot{
   background-color: rgba(112, 159, 165. .1);
+}
+
+td:first-child {
+  font-weight: bold;
+  font-style: italic;
 }
