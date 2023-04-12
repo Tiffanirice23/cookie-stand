@@ -18,6 +18,10 @@ let tableHeadRender = function () {
     thElem.textContent = `${hours[i]}`;
     tableRow.appendChild(thElem);
   }
+
+  let totalTD = document.createElement('td');
+  totalTD.textContent = 'Totals';
+  tableRow.appendChild(totalTD);
 }
 // Creates hourly Total 
 let tableFootRender = function (stores) {
@@ -64,10 +68,7 @@ function Store(name, min, max, average) {
       this.dailyTotal += cookiesSoldPerHour;
     }
   }
-// dailyTotal = function () {
-//   for (let i = 0; i < this.cookiesSoldEachHourArray; i++) {
-//   }
-// }
+
 
   this.renderTableRow = function () {
     let tableRow = document.createElement('tr');
@@ -82,6 +83,10 @@ function Store(name, min, max, average) {
       tdElem.textContent = this.cookiesSoldEachHourArray[i];
       tableRow.appendChild(tdElem);
     }
+
+    let totalTD = document.createElement('td');
+    totalTD.textContent = this.dailyTotal;
+    tableRow.appendChild(totalTD);
   }
 
 
@@ -96,7 +101,7 @@ function Store(name, min, max, average) {
 
 tableHeadRender();
 
-// dailyTotal();
+// dailyStoreTotal(hours.length);
 
 let Seattle = new Store('Seattle', 23, 65, 6.3);
 let Tokyo = new Store('Tokyo', 3, 24, 1.2);
