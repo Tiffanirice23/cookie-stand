@@ -1,9 +1,9 @@
 'use strict'
 console.log('hi, Sheyna and Kale!');
 
-let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m', 'Total'];
+let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m'];
 
-let tableHeadRender = function() {
+let tableHeadRender = function () {
   let tHead = document.createElement('thead');
   document.getElementById('storeProfiles').appendChild(tHead);
 
@@ -19,6 +19,29 @@ let tableHeadRender = function() {
     tableRow.appendChild(thElem);
   }
 }
+// Creates hourly Total 
+let tableFootRender = function (stores) {
+
+  let tableRow = document.createElement('tr');
+  document.getElementById('storeProfiles').appendChild(tableRow);
+
+  let tdTotal = document.createElement('td');
+  tdTotal.textContent = 'Totals';
+  tableRow.appendChild(tdTotal);
+  
+  for (let i = 0; i < hours.length; i++) {
+    let hourlyTotal = 0;
+
+    for (let j = 0; j < stores.length; j++) {
+      hourlyTotal += stores[j].cookiesSoldEachHourArray[i];
+    } 
+
+    let tdElem = document.createElement('td');
+    tdElem.textContent = hourlyTotal;
+    tableRow.appendChild(tdElem);
+  }
+}
+
 
 function Store(name, min, max, average) {
   this.name = name;
@@ -28,12 +51,12 @@ function Store(name, min, max, average) {
   this.cookiesSoldEachHourArray = [];
   this.dailyTotal = 0;
 
-  this.generateRandomNumberOfCustomers = function() {
+  this.generateRandomNumberOfCustomers = function () {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
   }
 
-  this.calculateCookiesPerHour = function() {
-    for (let i = 0; i < hours.length -1; i++) {
+  this.calculateCookiesPerHour = function () {
+    for (let i = 0; i < hours.length; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
       let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.average);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
@@ -41,7 +64,7 @@ function Store(name, min, max, average) {
     }
   }
 
-  this.renderTableRow = function() {
+  this.renderTableRow = function () {
     let tableRow = document.createElement('tr');
     document.getElementById('storeProfiles').appendChild(tableRow);
 
@@ -56,6 +79,12 @@ function Store(name, min, max, average) {
     }
   }
 
+
+  // let total = document.createElement('td');
+  // dailyTotal.textContent = "Daily Location Total"
+  // tableElement.appendChild(total);
+
+
   this.calculateCookiesPerHour();
   this.renderTableRow();
 }
@@ -67,6 +96,9 @@ let Tokyo = new Store('Tokyo', 3, 24, 1.2);
 let Dubai = new Store('Dubai', 11, 38, 3.7);
 let Paris = new Store('Paris', 20, 38, 2.3);
 let Lima = new Store('Lima', 2, 16, 4.6);
+
+tableFootRender([Seattle, Tokyo, Dubai, Paris, Lima]);
+
 
 
 // let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m', 'Total']
