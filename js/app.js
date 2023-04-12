@@ -42,6 +42,7 @@ let tableFootRender = function (stores) {
   }
 }
 
+let dailyStoreTotal = document.createElement
 
 function Store(name, min, max, average) {
   this.name = name;
@@ -63,6 +64,10 @@ function Store(name, min, max, average) {
       this.dailyTotal += cookiesSoldPerHour;
     }
   }
+// dailyTotal = function () {
+//   for (let i = 0; i < this.cookiesSoldEachHourArray; i++) {
+//   }
+// }
 
   this.renderTableRow = function () {
     let tableRow = document.createElement('tr');
@@ -90,6 +95,8 @@ function Store(name, min, max, average) {
 }
 
 tableHeadRender();
+
+// dailyTotal();
 
 let Seattle = new Store('Seattle', 23, 65, 6.3);
 let Tokyo = new Store('Tokyo', 3, 24, 1.2);
