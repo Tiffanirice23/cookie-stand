@@ -3,6 +3,23 @@ console.log('hi, Sheyna and Kale!');
 
 let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m', 'Total'];
 
+let tableHeadRender = function() {
+  let tHead = document.createElement('thead');
+  document.getElementById('storeProfiles').appendChild(tHead);
+
+  let tableRow = document.createElement('tr');
+  tHead.appendChild(tableRow);
+
+  let emptyTh = document.createElement('th');
+  tableRow.appendChild(emptyTh);
+
+  for (let i = 0; i < hours.length; i++) {
+    let thElem = document.createElement('th');
+    thElem.textContent = `${hours[i]}`;
+    tableRow.appendChild(thElem);
+  }
+}
+
 function Store(name, min, max, average) {
   this.name = name;
   this.min = min;
@@ -16,7 +33,7 @@ function Store(name, min, max, average) {
   }
 
   this.calculateCookiesPerHour = function() {
-    for (let i = 0; i < hours.length; i++) {
+    for (let i = 0; i < hours.length -1; i++) {
       let randomNumberOfCustomers = this.generateRandomNumberOfCustomers();
       let cookiesSoldPerHour = Math.ceil(randomNumberOfCustomers * this.average);
       this.cookiesSoldEachHourArray.push(cookiesSoldPerHour);
@@ -39,32 +56,18 @@ function Store(name, min, max, average) {
     }
   }
 
-  this.tableHeadRender = function() {
-    let tHead = document.createElement('thead');
-    document.getElementById('storeProfiles').appendChild(tHead);
-
-    let tableRow = document.createElement('tr');
-    tHead.appendChild(tableRow);
-
-    let emptyTh = document.createElement('th');
-    tableRow.appendChild(emptyTh);
-
-    for (let i = 0; i < hours.length - 1; i++) {
-      let thElem = document.createElement('th');
-      thElem.textContent = `${hours[i]}`;
-      tableRow.appendChild(thElem);
-    }
-  }
-
   this.calculateCookiesPerHour();
+  this.renderTableRow();
 }
 
-let Seattle = new Store('Seattle', 23, 65, 6.3);
-Seattle.tableHeadRender();
-Seattle.renderTableRow();
+tableHeadRender();
 
+let Seattle = new Store('Seattle', 23, 65, 6.3);
 let Tokyo = new Store('Tokyo', 3, 24, 1.2);
-Tokyo.renderTableRow();
+let Dubai = new Store('Dubai', 11, 38, 3.7);
+let Paris = new Store('Paris', 20, 38, 2.3);
+let Lima = new Store('Lima', 2, 16, 4.6);
+
 
 // let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m', 'Total']
 // Seattle Store
