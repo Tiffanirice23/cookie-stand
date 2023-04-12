@@ -20,7 +20,7 @@ let tableHeadRender = function () {
   }
 
   let totalTD = document.createElement('td');
-  totalTD.textContent = 'Totals';
+  totalTD.textContent = 'Store Totals';
   tableRow.appendChild(totalTD);
 }
 // Creates hourly Total 
@@ -30,7 +30,7 @@ let tableFootRender = function (stores) {
   document.getElementById('storeProfiles').appendChild(tableRow);
 
   let tdTotal = document.createElement('td');
-  tdTotal.textContent = 'Totals';
+  tdTotal.textContent = 'Hourly Totals';
   tableRow.appendChild(tdTotal);
   
   for (let i = 0; i < hours.length; i++) {
