@@ -11,12 +11,51 @@
 
 <body>
   <main>
+    <form>
+      <fieldset>
+        <legend> New Store Data </legend>
+        <label> New Location: 
+          <input type="text" name="cityName" required>
+        </label>
+
+        <label> New Minimum:
+          <input type="number" name="cityMin" required>
+        </label>
+
+        <label> New Maximum: 
+          <input type="number" name="cityMax" required>
+        </label>
+
+        <label> New Avg Cookie/ Sale: 
+          <input type="number" name="cityAvg" step=".1" required>
+        </label>
+      </fieldset> 
+
+        <!-- <label for="nameOfCity"> New Location:</label>
+        <input type="text" name="cityName" id="nameofCity" placeholder="Store Location">
+    </fieldset>
+
+    <fieldset>
+      <label for="storeMin"> Min/ Customer:</label>
+      <input type="number" name="storeMin" id="storeMin" placeholder="Min# :">
+    </fieldset>
+    
+    <fieldset>
+      <label for="storeMax"> Max/ Customer:</label>
+      <input type="number" name="storeMax" id="storeMax" placeholder="Max# :">
+    </fieldset>
+
+    <fieldset>
+      <label for="avgSale"> Average Cookie/ Sale:</label>
+      <input type="number" name="avgSale" id="avgSale" placeholder="avg Sale# :">
+    </fieldset> -->
+    <button type="submit"> Add Store to Estimates!</button>
     <table id="storeProfiles">
 
     </table>
   </main>
   <footer>
-<h6> Click <a href="https://tiffanirice23.github.io/cookie-stand/">here</a> to see our Home page!</h6>
+    <h6> Click <a href="https://tiffanirice23.github.io/cookie-stand/">here</a> to see our Home page!</h6>
   </footer>
 
   <script src="js/app.js" text="text/javascript"></script>

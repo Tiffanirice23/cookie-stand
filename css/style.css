@@ -151,3 +151,8 @@ span {
 h6 {
   text-align: center;
 }
+
+#storeProfiles {
+  border: 1px solid black;
+  color:aliceblue;
+}

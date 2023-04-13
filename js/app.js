@@ -23,6 +23,7 @@ let tableHeadRender = function () {
   totalTD.textContent = 'Store Totals';
   tableRow.appendChild(totalTD);
 }
+
 // Creates hourly Total 
 let tableFootRender = function (stores) {
 
@@ -112,6 +113,31 @@ let Lima = new Store('Lima', 2, 16, 4.6);
 tableFootRender([Seattle, Tokyo, Dubai, Paris, Lima]);
 
 
+// Events
+let form = document.querySelector('form');
+console.log (form);
+
+let handleSubmit = function (event){
+  event.preventDefault();
+  console.log(event.target.cityName.value);
+  console.log(event.target.cityMin.value);
+  
+  let cityName = event.target.cityName.value;
+  let cityMin = parseInt(event.target.cityMin.value);
+  let cityMax = parseInt(event.target.cityMax.value);
+  let cityAvg = parseInt(event.target.cityAvg.value);
+  let newStore = new Store (
+    cityName,
+    cityMin,
+    cityMax,
+    cityAvg,
+    );
+    console.log(newStore);
+    newStore.tableFootRender();
+    storeArray.push(newStore);
+  }
+  
+  form.addEventListener('submit', handleSubmit)
 
 // let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m', 'Total']
 // Seattle Store
