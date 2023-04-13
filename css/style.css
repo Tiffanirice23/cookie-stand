@@ -1,6 +1,6 @@
-table, td, th {
+/* table, td, th {
   /* border: 1px solid black; */
-}
+
 
 table {
   margin: 1rem;
@@ -11,11 +11,15 @@ table {
 td, th {
   padding: 1rem;
   border: 1px solid black;
+}
 
+#storeProfiles td {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 thead, th {
   font-weight: bold;
+  color: #E7ECEF;
   border: 1px solid black;
 }
 
@@ -23,26 +27,29 @@ tfoot{
   background-color: rgba(112, 159, 165. .1);
 }
 
-td:first-child {
+th {
   font-weight: bold;
-  font-style: italic;
-}
+} 
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
-
+td img {
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+}
 header {
-  background-color: slategray;
-
+  background-color: #35524A;
 }
 
 main {
-  background-color: slategray;
+  background-color: #35524A;
 }
 
 body {
-  background-color: slategray;
+  background-color: #35524A;
+  font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -50,7 +57,7 @@ nav {
   justify-content: center;
   align-items: center;
   /* border: 1px solid black; */
-  padding: 15px;
+  /* padding: 15px; */
   /* margin: 2rem; */
   /* justify-content: space-between;  */
 }
@@ -67,10 +74,11 @@ nav {
 li a {
   display: block;
   color: rgb(10, 41, 73);
-  text-align: center;
-  padding: 14px 60px;
+  /* text-align: center; */
+  padding: 20px;
   text-decoration: none;
   padding-top: 15px;
+  color: #F05D5E;
 }
 
 li {
@@ -81,18 +89,8 @@ li a:hover {
   background-color: #9a99a3;
 }
 
-article a:hover {
-  background-color: #9a99a3;
-}
-/* 
-nav>ul {
-
-  display: flex;
-  flex-direction: row;
-} */
-
 main > section {
-  background-color: slategray;
+  background-color: #779CAB;
   width: 960px;
   display: flex;
   justify-content: space-between;
@@ -102,13 +100,9 @@ main > section {
   
 }
 
-main img {
-  margin-bottom: 30px;
-}
-
 footer {
   height: 100px;
-  background-color: #ddd;
+  background-color: #83959c;
   text-align: right;
   margin: 25px;
 }
@@ -123,16 +117,37 @@ article section {
   
 }
 
-article a {
-  background-color: #333;
-  float: left;
-  display: block;
-  color: white;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  margin-top: 15px;
-  border-radius: 10%;
-  width: 250px;
+table {
+  text-align: center;
+}
+nav img{
+  height: 100px;
+  width: 300px;
+  margin-left: 50px;
+}
+
+span img {
+  width: 400px;
+  height: 320px;
+  margin-top: 10px;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #6B4E71;
+}
+
+section {
+  margin: 15px;
+  display: inline-block;
+  justify-content: center; 
+}
+
+span {
+  width: 45%;
+}
+
+h6 {
   text-align: center;
 }
