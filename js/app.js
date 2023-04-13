@@ -2,13 +2,11 @@
 console.log('hi, Sheyna and Kale!');
 
 let hours = ['6 a.m', '7 a.m', '8 a.m', '9 a.m', '10 a.m', '11 a.m', '12 p.m', '1 p.m', '2 p.m', '3 p.m', '4 p.m', '5 p.m', '6 p.m', '7 p.m'];
+let stores = [];
 
 let tableHeadRender = function () {
-  let tHead = document.createElement('thead');
-  document.getElementById('storeProfiles').appendChild(tHead);
-
   let tableRow = document.createElement('tr');
-  tHead.appendChild(tableRow);
+  document.getElementById('storeProfilesHead').appendChild(tableRow);
 
   let emptyTh = document.createElement('th');
   tableRow.appendChild(emptyTh);
@@ -25,10 +23,13 @@ let tableHeadRender = function () {
 }
 
 // Creates hourly Total 
-let tableFootRender = function (stores) {
+let tableFootRender = function () {
+  let existingFooter = document.getElementById('storeTotals');
+  if (existingFooter) existingFooter.remove();
 
   let tableRow = document.createElement('tr');
-  document.getElementById('storeProfiles').appendChild(tableRow);
+  tableRow.setAttribute("id", "storeTotals");
+  document.getElementById('storeProfilesFoot').appendChild(tableRow);
 
   let tdTotal = document.createElement('td');
   tdTotal.textContent = 'Hourly Totals';
@@ -73,7 +74,7 @@ function Store(name, min, max, average) {
 
   this.renderTableRow = function () {
     let tableRow = document.createElement('tr');
-    document.getElementById('storeProfiles').appendChild(tableRow);
+    document.getElementById('storeProfilesBody').appendChild(tableRow);
 
     let nameTd = document.createElement('td');
     nameTd.textContent = this.name;
@@ -104,13 +105,13 @@ tableHeadRender();
 
 // dailyStoreTotal(hours.length);
 
-let Seattle = new Store('Seattle', 23, 65, 6.3);
-let Tokyo = new Store('Tokyo', 3, 24, 1.2);
-let Dubai = new Store('Dubai', 11, 38, 3.7);
-let Paris = new Store('Paris', 20, 38, 2.3);
-let Lima = new Store('Lima', 2, 16, 4.6);
+let Seattle = stores.push(new Store('Seattle', 23, 65, 6.3));
+let Tokyo = stores.push(new Store('Tokyo', 3, 24, 1.2));
+let Dubai = stores.push(new Store('Dubai', 11, 38, 3.7));
+let Paris = stores.push(new Store('Paris', 20, 38, 2.3));
+let Lima = stores.push(new Store('Lima', 2, 16, 4.6));
 
-tableFootRender([Seattle, Tokyo, Dubai, Paris, Lima]);
+tableFootRender();
 
 
 // Events
@@ -127,15 +128,14 @@ let handleSubmit = function (event){
   let cityMax = parseInt(event.target.cityMax.value);
   let cityAvg = parseInt(event.target.cityAvg.value);
   let newStore = new Store (
-    cityName,
-    cityMin,
-    cityMax,
-    cityAvg,
-    );
-    console.log(newStore);
-    newStore.tableFootRender();
-    storeArray.push(newStore);
-  }
+      cityName,
+      cityMin,
+      cityMax,
+      cityAvg,
+  );
+  stores.push(newStore);
+  tableFootRender();
+}
   
   form.addEventListener('submit', handleSubmit)
 
