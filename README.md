@@ -5,6 +5,8 @@
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
 ### Author:  Tiffani Rice
+Resources: Dan Quinn (for JS table)
+- (Remove Element by ID for lab09)[https://stackoverflow.com/questions/3387427/remove-element-by-id]
 
 ### Links and Resources
 
