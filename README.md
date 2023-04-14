@@ -17,6 +17,11 @@ Resources: Dan Quinn (for JS table)
 
 ![Lighthouse Report](img/lighthouse_ss.png)
 
+Lab09 Lighthouse
+
+! [Lighthouse Report](img/indexhtml_ss.png)
+! [Lighthouse Report](img/saleshtml_ss.png)
+
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
 
 ### Reflections and Comments
