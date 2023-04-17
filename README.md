@@ -1,5 +1,3 @@
-# LAB - 06
-
 ## Cookie Stand
 
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
@@ -15,12 +13,16 @@ Resources: Dan Quinn (for JS table)
 
 ### Lighthouse Accessibility Report Score
 
-![Lighthouse Report](img/lighthouse_ss.png)
 
+Lab10b Lighthouse
+
+![Lighthouse Report](img/lab10lighthouse-ss.png)
 Lab09 Lighthouse
 
-! [Lighthouse Report](img/indexhtml_ss.png)
-! [Lighthouse Report](img/saleshtml_ss.png)
+![Lighthouse Report](img/indexhtml_ss.png)
+![Lighthouse Report](img/saleshtml_ss.png)
+
+![Lighthouse Report](img/lighthouse_ss.png)
 
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
 
