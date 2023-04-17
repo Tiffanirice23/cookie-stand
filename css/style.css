@@ -143,6 +143,9 @@ h6 {
   padding-top: 40px;
 }
 
+p {
+  padding: 10px;
+}
 #storeProfiles {
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 200px;
