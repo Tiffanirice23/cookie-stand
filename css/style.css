@@ -188,6 +188,7 @@ fieldset {
 
 legend{
   padding: 15px;
+  font-weight: bolder;
 }
 button {
   margin-left: 60px;
@@ -196,10 +197,6 @@ button {
 #salesFooter {
   background-color: #e5e5e5;
   align-items: baseline;
-}
-
-legend {
-  font-weight: bolder;
 }
 
 
@@ -230,4 +227,8 @@ h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Roboto', sans-serif;
+}
+
+h1:hover {
+  color: rgb(255, 191, 72);
 }
