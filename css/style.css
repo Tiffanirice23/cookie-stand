@@ -129,7 +129,7 @@ h3 {
   color: #f28482;
   text-decoration: underline;
   font-size: larger;
-  align-items: left;
+  margin-bottom: 15px;
 }
 
 
@@ -215,6 +215,6 @@ article:hover {
   background-color: rgb(255, 191, 72);
 }
 
-table:hover {
+#main:hover {
   background-color: #f28482;
 }
