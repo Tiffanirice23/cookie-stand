@@ -221,3 +221,13 @@ article:hover {
 #main:hover {
   background-color: #f28482;
 }
+
+h1 {
+  font-size: xx-large;
+  margin-top: 40px;
+  font-weight: bolder;
+  color: #193039;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
